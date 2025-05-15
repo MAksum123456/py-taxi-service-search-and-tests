@@ -20,16 +20,16 @@
         <th>MANUFACTURER</th>
         <th>COUNTRY</th>
       </tr>
-    {% for car in car_list %}
-      <tr>
-      <td>{{ car.id }}</td>
-      <td><a href="{% url 'taxi:car-detail' pk=car.id %}">{{ car.model }}</a></td>
-      <td>{{ car.manufacturer.name }}</td>
-      <td>{{ car.manufacturer.country }}</td>
-      </tr>
-    {% endfor %}
+      {% for car in car_list %}
+        <tr>
+          <td>{{ car.id }}</td>
+          <td><a href="{% url 'taxi:car-detail' pk=car.id %}">{{ car.model }}</a></td>
+          <td>{{ car.manufacturer.name }}</td>
+          <td>{{ car.manufacturer.country }}</td>
+        </tr>
+      {% endfor %}
+    </table>
   {% else %}
     <p>There are no cars in taxi</p>
   {% endif %}
-</table>
 {% endblock %}
